@@ -13,7 +13,7 @@ const sequelize = new Sequelize(
 );
 async function connectDatabase() {
     try {
-      sequelize.sync({ force: false , alter: true }).then(() => {
+      sequelize.sync({ force: false  , alter: true }).then(() => {
         console.log("Postgres sync has been established successfully.");
       });
     } catch (error) {
@@ -21,6 +21,8 @@ async function connectDatabase() {
     }
   }
   connectDatabase();
+ 
+  
 
 module.exports = sequelize;
 

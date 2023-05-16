@@ -18,9 +18,6 @@ const Store = sequelize.define(
       allowNull: false,
     },
   },
-  {
-    timestamps: false,
-  }
 );
 
 module.exports = Store;
