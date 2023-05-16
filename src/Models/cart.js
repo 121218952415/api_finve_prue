@@ -22,9 +22,10 @@ const Cart = sequelize.define('Cart', {
     allowNull: false,
     defaultValue: 0,
   },
-},{
-    timestamps: true,
-  });
+}, {
+  timestamps: true,
+});
+
 
 
   module.exports = Cart ; 
