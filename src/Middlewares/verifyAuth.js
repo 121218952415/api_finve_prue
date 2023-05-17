@@ -1,7 +1,7 @@
 const verifyAuth = (req, res, next) => {
     // Verificar si la sesión está activa
     if (req.session.isLoggedIn) {
-        console.log(req.headers);
+       
         //pedir token y comparar
       // Si la sesión está activa, continuar con la siguiente función de middleware
       next();

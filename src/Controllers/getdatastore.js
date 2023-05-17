@@ -7,7 +7,7 @@ const getDataStore = async (req, res) => {
     });
     return res.status(201).json(getDataStore);
   } catch (err) {
-    return res.status(500).json({ error: err.message });
+    return res.status(500).json({  error: "Internal Server Error"  });
   }
 };
 

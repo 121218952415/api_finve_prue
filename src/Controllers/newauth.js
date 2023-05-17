@@ -10,7 +10,7 @@ const login = async (req, res) => {
     const user = await User.findOne({ where: { email : email} });
     // Verificar si el usuario existe
     if (!user) {
-      return res.status(401).json({ message: "Credenciales inválidas" });
+      return res.status(401).json({ message: "invalid credentials" });
     }
 
     // Comparar la contraseña encriptada con la contraseña proporcionada
@@ -21,15 +21,17 @@ const login = async (req, res) => {
       // Si las contraseñas coinciden, establecer una sesión
       req.session.isLoggedIn = true;
       req.session.username = email;
+      req.session.userId = user.id;
+      req.session.userId = user.name ;
       //crear token
 
-      return res.status(200).json({ message: "Inicio de sesión exitoso" });
+      return res.status(200).json({ message: `login successful${user.name}` });
     } else {
       // Si las contraseñas no coinciden, devolver un error
-      return res.status(401).json({ message: "Credenciales inválidas" });
+      return res.status(401).json({ message: "invalid credentials" });
     }
   } catch (error) {
-    return res.status(500).json({ error: error.message });
+    return res.status(500).json({  error: "Internal Server Error" });
   }
 };
 

@@ -5,7 +5,9 @@ const Product = require("../Models/products");
 
 const addToCart = async (req, res) => {
   try {
-    const { userId, storeId, items, totalQty, totalPrice } = req.body;
+    const userId = req.session.userId;
+    console.log(userId)
+    const { storeId, items, totalQty, totalPrice } = req.body;
     
     // Verificar si el usuario existe
     const user = await User.findByPk(userId);
@@ -41,7 +43,7 @@ const addToCart = async (req, res) => {
 
     return res.status(201).json({ message: "Cart created", cart });
   } catch (err) {
-    return res.status(500).json({ error: err.message });
+    return res.status(500).json({ error: "Internal Server Error" });
   }
 };
 
