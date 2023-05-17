@@ -6,13 +6,13 @@ const Product = require("../Models/products");
 const addToCart = async (req, res) => {
   try {
     const { userId, storeId, items, totalQty, totalPrice } = req.body;
-
+    
     // Verificar si el usuario existe
     const user = await User.findByPk(userId);
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
-
+    
     // Verificar si la tienda existe
     const store = await Store.findByPk(storeId);
     if (!store) {

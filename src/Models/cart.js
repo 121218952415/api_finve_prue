@@ -8,7 +8,7 @@ const Cart = sequelize.define("Cart", {
     primaryKey: true,
   },
   items: {
-    type: DataTypes.ARRAY(DataTypes.JSONB),
+    type: DataTypes.ARRAY(DataTypes.JSON),
     allowNull: false,
     defaultValue: [],
   },

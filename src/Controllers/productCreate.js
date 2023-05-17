@@ -4,6 +4,8 @@ const createProduct = async (req, res) => {
   const { price, name, img, storeId } = req.body;
   
   try {
+
+
     if (!name) {
       return res.status(400).json({ error: "Please provide a name" });
     }

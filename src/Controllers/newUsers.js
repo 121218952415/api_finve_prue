@@ -29,6 +29,7 @@ const newUser = async (req, res) => {
     console.error("Error:", error);
     return res.status(500).json({ error: "Internal Server Error" });
   }
+  
 };
 
 module.exports = { newUser };
