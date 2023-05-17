@@ -16,15 +16,6 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(routes);
 
-const { Store, Product, Cart, User } = sequelize.models;
-console.log(Store, Product, Cart, User);
 
-// relacion producto tienda
-Product.belongsTo(Store, { foreignKey: "storeId" });
-Store.hasMany(Product, { foreignKey: "storeId" });
-
-// //relacion carrito de compras y usuario
-// Product.belongsToMany(Cart, { through: "CartProduct" });
-// Cart.belongsToMany(Product, { through: "CartProduct" });
 
 module.exports = app;

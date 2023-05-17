@@ -5,7 +5,6 @@ const { ROUNDS } = process.env;
 const newUser = async (req, res) => {
   const data = req.body;
   const password = bcrypt.hashSync(data.password, parseInt(ROUNDS));
-  console.log("::::",data,password)
 
   try {
     if (!data.name) {
