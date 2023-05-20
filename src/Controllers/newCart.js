@@ -5,8 +5,8 @@ const Product = require("../Models/products");
 
 const addToCart = async (req, res) => {
   try {
-    const userId = req.session.userId;
-    console.log(userId)
+    const userId = req.session.user.id;
+    console.log(userId ,";;;;")
     const { storeId, items, totalQty, totalPrice } = req.body;
     
     // Verificar si el usuario existe

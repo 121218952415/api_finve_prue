@@ -18,6 +18,7 @@ app.use(express.json());
 app.use(session({
     secret: SECRET , // Cambia esto por una cadena secreta más segura
     resave: false,
+    saveUninitialized: false,
     cookie: {
         maxAge: 30 * 60 * 1000, // Duración de 24 horas (en milisegundos)
       },
