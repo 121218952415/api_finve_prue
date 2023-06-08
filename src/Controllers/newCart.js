@@ -5,16 +5,16 @@ const Product = require("../Models/products");
 
 const addToCart = async (req, res) => {
   try {
-    const userId = req.session.user.id;
-    console.log(userId ,";;;;")
     const { storeId, items, totalQty, totalPrice } = req.body;
-    
+
+    // Obtener el ID del usuario autenticado
+    const userId = req.userId;
     // Verificar si el usuario existe
     const user = await User.findByPk(userId);
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
-    
+
     // Verificar si la tienda existe
     const store = await Store.findByPk(storeId);
     if (!store) {

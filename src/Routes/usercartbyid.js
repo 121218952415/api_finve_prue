@@ -1,11 +1,12 @@
 const Router = require("express");
-const { addToCart } = require("../Controllers/newCart");
+
 const { verifyToken } = require("../Middlewares/verifyToken");
+const { getCartByUser } = require("../Controllers/getcartbyuser");
 const router = Router();
 
 
 
-router.post("/",verifyToken,addToCart)
+router.get("/",verifyToken,getCartByUser)
 
 
 

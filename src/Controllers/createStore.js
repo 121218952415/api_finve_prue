@@ -4,6 +4,8 @@ const createStore = async (req, res) => {
   try {
     const { store, location } = req.body;
 
+    
+
     if (!store) {
       return res.status(400).json({ error: "Please provide a store name." });
     }
