@@ -4,7 +4,7 @@ const router = Router();
 
 
 
-router.get("/",logout);
+// router.get("/",logout);
 
 
 module.exports = router;
